@@ -1,0 +1,246 @@
+/* Reset e Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c3051;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Barra de navegação */
+header {
+    width: 100%;
+    background-color: #4e5174; /* Cor de fundo para o header */
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo do campo de pesquisa */
+.campo-label {
+    display: block;
+    width: 360px; /* Tamanho inicial pequeno */
+    background-color: #fff;
+    position: relative;
+    margin: auto;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: width 0.4s ease; /* Transição suave ao aumentar */
+}
+
+.campo-label:focus-within {
+    width: 1500px; /* Aumenta o tamanho quando clicado */
+}
+
+/* Estilo do campo de entrada */
+.campo-input {
+    color: #555;
+    border: none;
+    padding: 0 10px;
+    outline: none;
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 2em;
+    font-family: system-ui;
+    border-bottom: 3px solid #e2e2e2;
+    background-color: transparent;
+}
+
+.campo-input:focus { 
+    color: #202020; 
+}
+
+/* Estilo do botão de busca com ícone de lupa */
+.btn-busca {
+    background-color: #ffffff;
+    width: 54px;
+    height: 43px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('lupa.svg'); /* Caminho para o ícone de lupa */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+}
+
+/* Estilo da caixa de sugestões */
+.suggestions-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #ccc;
+    background-color: white;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 0 0 10px 10px;
+}
+
+.suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilo do contêiner da tabela e conteúdo */
+.container {
+    max-width: 1400px;
+    width: 100%;
+    background-color: #4e5174;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 24px;
+    color: #b2b3dc;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    background-color: #9192b9;
+}
+
+.table th {
+    background-color: #6f7196;
+    color: white;
+}
+
+.table tr:nth-child(even) {
+    background-color: #4e5174;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #b2b3dc; /* Azul claro */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #6f7196; /* Azul escuro */
+    transform: translateY(-2px);
+}
+
+/* Estilo para o Modal */
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #4e5174;
+    margin: 15% auto; 
+    padding: 20px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 20px;
+    color: #b2b3dc;
+    margin-bottom: 10px;
+}
+
+.modal-message {
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-cancelar, .btn-excluir {
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-cancelar {
+    background-color: #9192b9;
+}
+
+.btn-excluir {
+    background-color: #FF6347;
+    color: white;
+}
+
+.btn-cancelar:hover {
+    background-color: #6f7196;
+}
+
+.btn-excluir:hover {
+    background-color: #d9534f;
+}
+
+.btn-cadastrar {
+    display: block; /* Faz o botão ocupar toda a largura disponível */
+    width: 100%; /* Define o botão com a largura total do seu elemento pai */
+    max-width: 250px; /* Define um tamanho máximo para o botão */
+    padding: 10px 20px;
+    margin: 20px auto 0; /* Centraliza o botão horizontalmente e dá um espaço acima */
+    background-color: #b2b3dc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-cadastrar:hover {
+    background-color: #6f7196;
+}

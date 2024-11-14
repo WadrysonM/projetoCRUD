@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema da Empresa</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="./backend/login.php" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+            
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" id="senha" required>
+            
+            <button type="submit" class="btn">Login</button>
+        </form>
+    </div>
+    <script src="./js/script.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/listaFuncionario.js"></script>
+</body>
+</html>

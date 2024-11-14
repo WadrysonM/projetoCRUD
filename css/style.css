@@ -1,0 +1,142 @@
+/* Reset e Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c3051; /* Azul muito escuro */
+    color: #fff; /* Cor do texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Para centralizar verticalmente */
+}
+
+/* Estilo para o Login */
+.container-login {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #4e5174; /* Azul ainda mais escuro */
+    border-radius: 12px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.container-login:hover {
+    transform: translateY(-5px); /* Leve movimento ao passar o mouse */
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #b2b3dc; /* Azul claro */
+}
+
+form label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    color: #9192b9; /* Azul médio */
+}
+
+form input, form select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #6f7196; /* Azul escuro */
+    transition: border-color 0.3s;
+}
+
+form input:focus, form select:focus {
+    border-color: #b2b3dc; /* Azul claro ao focar */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #b2b3dc; /* Azul claro */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #6f7196; /* Azul escuro */
+    transform: translateY(-2px);
+}
+
+a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para o Cadastro de Funcionários */
+.container-cadastro {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #4e5174;
+    border-radius: 12px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.container-cadastro h1 {
+    font-size: 28px;
+    color: #b2b3dc;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    background-color: #9192b9; /* Azul médio */
+}
+
+.table th {
+    background-color: #6f7196;
+    color: white;
+}
+
+.table tr:nth-child(even) {
+    background-color: #4e5174;
+}
+
+/* Estilo dos Botões */
+.btn-primary, .btn-danger {
+    padding: 8px 12px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #b2b3dc;
+    color: white;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+
