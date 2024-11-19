@@ -1,19 +1,18 @@
 /* Reset e Configurações Gerais */
-* {
+:root, body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #2c3051;
+    background-attachment: fixed;
+    background-image: linear-gradient(140deg, #1D283B,#1f539b,#1d283b);
     color: #fff;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    row-gap: 9%;
 }
 
 /* Barra de navegação */
@@ -26,80 +25,12 @@ header {
     align-items: center;
 }
 
-/* Estilo do campo de pesquisa */
-.campo-label {
-    display: block;
-    width: 360px; /* Tamanho inicial pequeno */
-    background-color: #fff;
-    position: relative;
-    margin: auto;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: width 0.4s ease; /* Transição suave ao aumentar */
+.margin_left {
+    margin-right: 4px;
 }
 
-.campo-label:focus-within {
-    width: 1500px; /* Aumenta o tamanho quando clicado */
-}
-
-/* Estilo do campo de entrada */
-.campo-input {
-    color: #555;
-    border: none;
-    padding: 0 10px;
-    outline: none;
-    width: 100%;
-    font-size: 1.5rem;
-    line-height: 2em;
-    font-family: system-ui;
-    border-bottom: 3px solid #e2e2e2;
-    background-color: transparent;
-}
-
-.campo-input:focus { 
-    color: #202020; 
-}
-
-/* Estilo do botão de busca com ícone de lupa */
-.btn-busca {
-    background-color: #ffffff;
-    width: 54px;
-    height: 43px;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 3px;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('lupa.svg'); /* Caminho para o ícone de lupa */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20px 20px;
-}
-
-/* Estilo da caixa de sugestões */
-.suggestions-box {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    border: 1px solid #ccc;
-    background-color: white;
-    z-index: 1000;
-    max-height: 200px;
-    overflow-y: auto;
-    border-radius: 0 0 10px 10px;
-}
-
-.suggestion-item {
-    padding: 8px;
-    cursor: pointer;
-}
-
-.suggestion-item:hover {
-    background-color: #f0f0f0;
+.logo{
+    height:56.98px; width:167.66px;cursor: pointer; margin-left: 19%; padding-top: 4px; padding-bottom: 4px;
 }
 
 /* Estilo do contêiner da tabela e conteúdo */
@@ -244,3 +175,138 @@ button:hover {
 .btn-cadastrar:hover {
     background-color: #6f7196;
 }
+
+.search {
+    margin-right: 20%;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+}
+
+.input {
+    border-style: none;
+    height: 23px;
+    width: 0px;
+    padding: 10px;
+    outline: none;
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    background-color: transparent;
+    padding-right: 40px;
+    color: #fff;
+}
+
+.input::placeholder,
+.input {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+}
+
+.input-wrapper>button:hover {
+    background-color: transparent;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 1px;
+    bottom: 0px;
+    cursor: pointer;
+    width: 47px;
+    height: 44px;
+    outline: none;
+    border-style: none;
+    border-radius: 50%;
+    pointer-events: painted;
+    background-color: transparent;
+    transition: .2s linear;
+}
+
+.icon:focus ~ .input,
+.input:focus {
+    box-shadow: none;
+    width: 250px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 3px solid #1f539b;
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+nav{
+    background-color: black;
+    margin-top: 0;
+    padding:10px 10px;
+    justify-content: center;
+}
+ 
+ nav>ul{
+     margin: 0;
+     padding: 0;
+     list-style-type: none;
+ }
+ nav>ul>li{
+     float: right;
+     margin-top: 11px;
+ }
+ 
+ nav>ul>li>a{
+     display: block;
+     color: white;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     transition: color 0.30s;
+ }
+ 
+ nav>ul>li>a:hover{
+     color: #064AE7;
+ }
+  
+ main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }  
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {
+    td{
+        font-size: 10px;
+    }
+  }
+  
+  /* Tablet Portrait size to standard 960 (devices and browsers) */
+  @media only screen and (min-width: 768px) and (max-width: 959px) {
+    td{
+        font-size: 12px;
+    }
+  }
+  
+  /* All Mobile Sizes (devices and browser) */
+  @media only screen and (max-width: 767px) {
+    td{
+        font-size: 14px;
+    }
+  }
+  
+  /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    td{
+        font-size: 9px;
+    }
+  }
+  
+  /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+  @media only screen and (max-width: 479px) {
+    td{
+       font-size: 7px;
+    }
+  }

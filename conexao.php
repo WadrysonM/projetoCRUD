@@ -1,8 +1,8 @@
 <?php
 // Parâmetros de conexão
 $servidor = "localhost";  // Endereço do servidor
-$usuario = "";        // Usuário do MySQL
-$senha = "";   // Senha do MySQL
+$usuario = "root";        // Usuário do MySQL
+$senha = "123456";   // Senha do MySQL
 $bancodados = "empresa_bd"; // Nome do banco de dados
 $porta = 3306;
 // Cria a conexão
