@@ -32,6 +32,65 @@ function carregarFuncionarios() {
         .catch((error) => console.error("Erro ao carregar funcionários:", error));
 }
 
+// Função para lidar com a busca ao pressionar "Enter"
+function handleSearch(event) {
+    if (event.key === "Enter") {
+        const query = event.target.value.trim(); // Obtém o valor do campo de pesquisa
+
+        // Se o campo estiver vazio, recarrega a lista completa
+        if (query === "") {
+            carregarFuncionarios();
+            return;
+        }
+
+        buscarFuncionarios(query); // Chama a função para buscar os funcionários
+    }
+}
+
+// Função para buscar funcionários com base no nome
+function buscarFuncionarios(nome) {
+    fetch(`../backend/filtroFuncionarios.php?nome=${encodeURIComponent(nome)}`)
+        .then((response) => response.json())
+        .then((data) => {
+            const tabelaFuncionario = document.getElementById("tabelaFuncionario");
+            tabelaFuncionario.innerHTML = ""; // Limpa a tabela
+
+            if (data.length === 0) {
+                tabelaFuncionario.innerHTML = `
+                    <tr>
+                        <td colspan="6" class="text-center">Nenhum funcionário encontrado.</td>
+                    </tr>
+                `;
+                return;
+            }
+
+            // Popula a tabela com os resultados
+            data.forEach((funcionario) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${funcionario.id}</td>
+                    <td>${funcionario.nome}</td>
+                    <td>${funcionario.cpf}</td>
+                    <td>${funcionario.email}</td>
+                    <td>${funcionario.telefone}</td>
+                    <td>
+                        <button class="btn btn-edit" onclick="window.location.href='editarFuncionario.html?id=${funcionario.id}'">
+                            <i class="fas fa-edit"></i> Editar
+                        </button>
+                        <button class="btn btn-delete" onclick="excluirFuncionario(${funcionario.id})">
+                            <i class="fas fa-trash-alt"></i> Excluir
+                        </button>
+                    </td>
+                `;
+                tabelaFuncionario.appendChild(row);
+            });
+        })
+        .catch((error) => {
+            console.error("Erro ao buscar funcionários:", error);
+        });
+}
+
+
 // Função para abrir o modal de exclusão
 const excluirFuncionario = (id) => {
     idParaExcluir = id; // Armazena o ID para exclusão
