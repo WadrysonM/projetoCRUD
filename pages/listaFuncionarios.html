@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Funcionários</title>
     <link rel="stylesheet" href="../css/listaFuncionarios.css">
-
 </head>
 <body>
     <nav>
         <ul>
             <a href="https://infoel.com.br/site/" target="_blank"><img src="logoBranco.png" alt="Logo branca" class="logo"></a>
             <li class="search">
+                <select id="searchBy" class="select-search">
+                    <option value="nome" >Nome</option>
+                    <option value="cpf" >CPF</option>
+                    <option value="email" >E-mail</option>
+                    <option value="telefone" >Telefone</option>
+                </select>
+            </li>
+            <li>
                 <div class="input-wrapper">
-                <button class="icon margin_left">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="25px" width="25px">
-                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"></path>
-                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M22 22L20 20"></path>
-                    </svg>
-                </button>
-                <input id="searchInput" placeholder="search.." class="input" name="text" type="text" onkeypress="handleSearch(event)">
+                    <button class="icon margin_left">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="25px" width="25px">
+                            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"></path>
+                            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M22 22L20 20"></path>
+                        </svg>
+                    </button>
+                    <input id="searchInput" placeholder="Pesquisar..." class="input" name="text" type="text">
                 </div>
             </li>
             <li><a href="https://infoel.com.br/site/" target="_blank" class="margin_left">Suporte</a></li>
