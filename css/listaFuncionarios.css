@@ -1,0 +1,393 @@
+/* Reset e Configurações Gerais */
+:root, body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-attachment: fixed;
+    background-image: linear-gradient(140deg, #1D283B,#1f539b,#1d283b);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    row-gap: 9%;
+}
+
+/* Barra de navegação */
+header {
+    width: 100%;
+    background-color: #4e5174; /* Cor de fundo para o header */
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.margin_left {
+    margin-right: 4px;
+}
+
+.logo{
+    height:56.98px; width:167.66px;cursor: pointer; margin-left: 19%; padding-top: 4px; padding-bottom: 4px;
+}
+
+/* Estilo do contêiner da tabela e conteúdo */
+.container {
+    max-width: 1400px;
+    width: 100%;
+    background-color: #4e5174;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 24px;
+    color: #b2b3dc;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    background-color: #9192b9;
+}
+
+.table th {
+    background-color: #6f7196;
+    color: white;
+}
+
+.table tr:nth-child(even) {
+    background-color: #4e5174;
+}
+
+/* button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #b2b3dc; 
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #6f7196; 
+    transform: translateY(-2px);
+} */
+
+/* Estilo para o Modal */
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #4e5174;
+    margin: 15% auto; 
+    padding: 20px;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 20px;
+    color: #b2b3dc;
+    margin-bottom: 10px;
+}
+
+.modal-message {
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-cancelar, .btn-excluir {
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-cancelar {
+    background-color: #9192b9;
+}
+
+.btn-excluir {
+    background-color: #FF6347;
+    color: white;
+}
+
+.btn-cancelar:hover {
+    background-color: #6f7196;
+}
+
+.btn-excluir:hover {
+    background-color: #d9534f;
+}
+
+.btn-cadastrar {
+    display: block; /* Faz o botão ocupar toda a largura disponível */
+    width: 100%; /* Define o botão com a largura total do seu elemento pai */
+    max-width: 250px; /* Define um tamanho máximo para o botão */
+    padding: 10px 20px;
+    margin: 20px auto 0; /* Centraliza o botão horizontalmente e dá um espaço acima */
+    background-color: #b2b3dc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-cadastrar:hover {
+    background-color: #6f7196;
+}
+
+.search {
+    margin-top: 23px;
+    margin-right: 20%;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+}
+
+.input {
+    border-style: none;
+    height: 23px;
+    width: 0px;
+    padding: 10px;
+    outline: none;
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+    background-color: transparent;
+    padding-right: 40px;
+    color: #fff;
+}
+
+.input::placeholder,
+.input {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+}
+
+.input-wrapper>button:hover {
+    background-color: transparent;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 1px;
+    bottom: 0px;
+    cursor: pointer;
+    width: 45px;
+    height: 44px;
+    outline: none;
+    border-style: none;
+    border-radius: 50%;
+    pointer-events: painted;
+    background-color: transparent;
+    transition: .2s linear;
+}
+
+.icon:focus ~ .input,
+.input:focus {
+    box-shadow: none;
+    width: 250px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 3px solid #1f539b;
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+nav{
+    background-color: black;
+    margin-top: 0;
+    padding:10px 10px;
+    justify-content: center;
+}
+ 
+ nav>ul{
+     margin: 0;
+     padding: 0;
+     list-style-type: none;
+ }
+ nav>ul>li{
+     float: right;
+     margin-top: 11px;
+ }
+ 
+ nav>ul>li>a{
+     display: block;
+     color: white;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+     transition: color 0.30s;
+ }
+ 
+ nav>ul>li>a:hover{
+     color: #064AE7;
+ }
+  
+ main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }  
+
+#searchBy {
+    text-align: center;
+    width: 90px;
+    background-color: transparent;
+    color: #f4f4f4;
+    border: transparent;
+    font-size: 16px;
+}
+
+option {
+    color: #f4f4f4;
+    background-color: black;
+}
+
+/* From Uiverse.io by hannahyockel */ 
+button {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 1em;
+border: 0px solid transparent;
+background-color: #20467E;
+border-radius: 1.25em;
+transition: all 0.2s linear;
+}
+
+button:hover {
+box-shadow: 3.4px 2.5px 4.9px rgba(0, 0, 0, 0.025),
+    8.6px 6.3px 12.4px rgba(0, 0, 0, 0.035),
+    17.5px 12.8px 25.3px rgba(0, 0, 0, 0.045),
+    36.1px 26.3px 52.2px rgba(0, 0, 0, 0.055),
+    99px 72px 143px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.tooltip {
+position: relative;
+display: inline-block;
+}
+
+.tooltip .tooltiptext {
+visibility: hidden;
+width: 4em;
+background-color: rgba(0, 0, 0, 0.253);
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 5px 0;
+position: absolute;
+z-index: 1;
+top: 25%;
+left: 110%;
+}
+
+.tooltip .tooltiptext::after {
+content: "";
+position: absolute;
+top: 50%;
+right: 100%;
+margin-top: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: transparent rgba(0, 0, 0, 0.253) transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+visibility: visible;
+}
+
+.edit-svgIcon path {
+    fill: white;
+}
+
+#tdRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {
+    td{
+        font-size: 10px;
+    }
+  }
+  
+  /* Tablet Portrait size to standard 960 (devices and browsers) */
+  @media only screen and (min-width: 768px) and (max-width: 959px) {
+    td{
+        font-size: 12px;
+    }
+  }
+  
+  /* All Mobile Sizes (devices and browser) */
+  @media only screen and (max-width: 767px) {
+    td{
+        font-size: 14px;
+    }
+  }
+  
+  /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    td{
+        font-size: 9px;
+    }
+  }
+  
+  /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+  @media only screen and (max-width: 479px) {
+    td{
+       font-size: 7px;
+    }
+  }
