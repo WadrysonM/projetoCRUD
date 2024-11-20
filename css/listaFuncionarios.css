@@ -170,6 +170,7 @@ button:hover {
     text-decoration: none;
     border-radius: 8px;
     transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
 }
 
 .btn-cadastrar:hover {
