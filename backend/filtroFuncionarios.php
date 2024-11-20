@@ -1,20 +1,45 @@
 <?php
 header('Content-Type: application/json');
-include '../conexao.php'; // Certifique-se de que o arquivo de conexão está correto
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-$nome = isset($_GET['nome']) ? $mysqli->real_escape_string($_GET['nome']) : '';
+// Conexão com o banco de dados
+include '../conexao.php';
 
-if ($nome === '') {
+// Verifique se a variável $mysqli foi definida
+if (!isset($mysqli)) {
+    die(json_encode([
+        "success" => false,
+        "message" => "Erro: Variável \$mysqli não foi definida."
+    ]));
+}
+
+// Captura os parâmetros de pesquisa
+$campo = isset($_GET['campo']) ? $_GET['campo'] : 'nome';  // Default para nome
+$valor = isset($_GET['valor']) ? $mysqli->real_escape_string($_GET['valor']) : '';
+
+// Verifica se o valor foi informado
+if ($valor === '') {
     echo json_encode([]);
     exit;
 }
 
-$query = "SELECT ID_FUNCIONARIO, NOME, CPF, EMAIL, TELEFONE FROM tb_funcionario WHERE NOME LIKE ?";
+// Verifica se o campo é válido
+$camposValidos = ['nome', 'cpf', 'email', 'telefone'];
+if (!in_array($campo, $camposValidos)) {
+    die(json_encode([
+        "success" => false,
+        "message" => "Campo de pesquisa inválido."
+    ]));
+}
+
+// Construir a consulta dinâmica
+$query = "SELECT ID_FUNCIONARIO, NOME, CPF, EMAIL, TELEFONE FROM tb_funcionario WHERE $campo LIKE ?";
 $stmt = $mysqli->prepare($query);
 
 if ($stmt) {
-    $nomeBusca = '%' .$nome. '%';
-    $stmt->bind_param("s", $nomeBusca);
+    $valorBusca = '%' . $valor . '%';  // Adiciona % para a busca parcial
+    $stmt->bind_param("s", $valorBusca);
     $stmt->execute();
 
     // Obter os resultados

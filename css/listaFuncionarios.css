@@ -72,11 +72,11 @@ h1 {
     background-color: #4e5174;
 }
 
-button {
+/* button {
     width: 100%;
     padding: 12px;
     margin-top: 20px;
-    background-color: #b2b3dc; /* Azul claro */
+    background-color: #b2b3dc; 
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -86,9 +86,9 @@ button {
 }
 
 button:hover {
-    background-color: #6f7196; /* Azul escuro */
+    background-color: #6f7196; 
     transform: translateY(-2px);
-}
+} */
 
 /* Estilo para o Modal */
 .modal {
@@ -177,6 +177,7 @@ button:hover {
 }
 
 .search {
+    margin-top: 23px;
     margin-right: 20%;
 }
 
@@ -219,7 +220,7 @@ button:hover {
     right: 1px;
     bottom: 0px;
     cursor: pointer;
-    width: 47px;
+    width: 45px;
     height: 44px;
     outline: none;
     border-style: none;
@@ -275,6 +276,86 @@ nav{
     justify-content: center;
     align-items: center;
  }  
+
+#searchBy {
+    text-align: center;
+    width: 90px;
+    background-color: transparent;
+    color: #f4f4f4;
+    border: transparent;
+    font-size: 16px;
+}
+
+option {
+    color: #f4f4f4;
+    background-color: black;
+}
+
+/* From Uiverse.io by hannahyockel */ 
+button {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 1em;
+border: 0px solid transparent;
+background-color: #20467E;
+border-radius: 1.25em;
+transition: all 0.2s linear;
+}
+
+button:hover {
+box-shadow: 3.4px 2.5px 4.9px rgba(0, 0, 0, 0.025),
+    8.6px 6.3px 12.4px rgba(0, 0, 0, 0.035),
+    17.5px 12.8px 25.3px rgba(0, 0, 0, 0.045),
+    36.1px 26.3px 52.2px rgba(0, 0, 0, 0.055),
+    99px 72px 143px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.tooltip {
+position: relative;
+display: inline-block;
+}
+
+.tooltip .tooltiptext {
+visibility: hidden;
+width: 4em;
+background-color: rgba(0, 0, 0, 0.253);
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 5px 0;
+position: absolute;
+z-index: 1;
+top: 25%;
+left: 110%;
+}
+
+.tooltip .tooltiptext::after {
+content: "";
+position: absolute;
+top: 50%;
+right: 100%;
+margin-top: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: transparent rgba(0, 0, 0, 0.253) transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+visibility: visible;
+}
+
+.edit-svgIcon path {
+    fill: white;
+}
+
+#tdRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 
 /* Smaller than standard 960 (devices and browsers) */
 @media only screen and (max-width: 959px) {
